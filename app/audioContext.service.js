@@ -30,16 +30,12 @@ System.register(['angular2/core'], function(exports_1) {
                     }
                     return AudioContextService.instance;
                 };
-                AudioContextService.getOscInstance = function () {
-                    if (AudioContextService.instance == null) {
-                        AudioContextService.isCreating = true;
-                        AudioContextService.instance = new AudioContextService();
-                        AudioContextService.isCreating = false;
-                    }
-                    return AudioContextService.instance;
+                AudioContextService.getContext = function () {
+                };
+                AudioContextService.getOsc = function () {
+                    return OscillatorNode.instance;
                 };
                 AudioContextService.isCreating = false;
-                AudioContextService.isCreatingOsc = false;
                 AudioContextService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [])

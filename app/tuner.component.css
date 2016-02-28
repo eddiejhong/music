@@ -1,0 +1,41 @@
+.piano {
+    background-color: pink;
+    width: 10000px;
+    height:10000px;
+}
+
+.piano .key {
+    z-index: 1;
+    float: left;
+    position: relative;
+    width: 50px;
+    height: 200px;
+    background-color: white;
+    color: black;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid black;
+    border-left:0;
+    text-align: center;
+}
+
+.piano .black + .key {
+    margin-left: -13px;
+}
+
+.piano .black {
+    z-index: 2;
+    margin-left: -13px;
+    width: 26px;
+    height: 100px;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}
+
+.piano .key span {
+    position: absolute;
+    bottom: 0;
+}

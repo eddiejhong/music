@@ -40,16 +40,11 @@ System.register(['angular2/core', 'angular2/router', './music.service', './tuner
                         ]
                     }),
                     router_1.RouteConfig([
-                        // {
-                        //     path: '/dashboard',
-                        //     name: 'Dashboard',
-                        //     component: DashboardComponent,
-                        //     useAsDefault: true
-                        // },
                         {
                             path: '/tuner',
                             name: 'Tuner',
-                            component: tuner_component_1.TunerComponent
+                            component: tuner_component_1.TunerComponent,
+                            useAsDefault: true
                         },
                     ]), 
                     __metadata('design:paramtypes', [])

@@ -2,6 +2,7 @@ import { Component }       from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
 import { MusicService }     from './music.service';
+
 // import { DashboardComponent } from './dashboard.component';
 import { TunerComponent } from './tuner.component';
 
@@ -22,16 +23,11 @@ import { TunerComponent } from './tuner.component';
 })
 
 @RouteConfig([
-    // {
-    //     path: '/dashboard',
-    //     name: 'Dashboard',
-    //     component: DashboardComponent,
-    //     useAsDefault: true
-    // },
     {
         path: '/tuner',
         name: 'Tuner',
-        component: TunerComponent
+        component: TunerComponent,
+        useAsDefault: true
     },
 ])
 

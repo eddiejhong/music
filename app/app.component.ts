@@ -1,47 +1,40 @@
 import { Component }       from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
-import { HeroService }     from './hero.service';
-import { HeroesComponent } from './heroes.component';
-import { DashboardComponent } from './dashboard.component';
-import { HeroDetailComponent } from './hero-detail.component';
+
+import { MusicService }     from './music.service';
+// import { DashboardComponent } from './dashboard.component';
+import { TunerComponent } from './tuner.component';
 
 @Component({
     selector: 'my-app',
     template: `
       <h1>{{title}}</h1>
       <nav>
-        <a [routerLink]="['Dashboard']">Dashboard</a>
-        <a [routerLink]="['Heroes']">Heroes</a>
+        <a [routerLink]="['Tuner']">Tuner</a>
       </nav>
       <router-outlet></router-outlet>
     `,
-    styleUrls: ['app/app.component.css'],
     directives: [ROUTER_DIRECTIVES],
     providers: [
         ROUTER_PROVIDERS,
-        HeroService
+        MusicService
     ]
 })
 
 @RouteConfig([
+    // {
+    //     path: '/dashboard',
+    //     name: 'Dashboard',
+    //     component: DashboardComponent,
+    //     useAsDefault: true
+    // },
     {
-        path: '/dashboard',
-        name: 'Dashboard',
-        component: DashboardComponent,
-        useAsDefault: true
-    },
-    {
-        path: '/heroes',
-        name: 'Heroes',
-        component: HeroesComponent
-    },
-    {
-        path: '/detail/:id',
-        name: 'HeroDetail',
-        component: HeroDetailComponent
+        path: '/tuner',
+        name: 'Tuner',
+        component: TunerComponent
     },
 ])
 
 export class AppComponent {
-    title = 'Tour of Heroes';
+    title = 'Music for all';
 }

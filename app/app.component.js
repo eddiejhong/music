@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './music.service', './tuner.component'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './music.service', './piano.component', './reflection.component'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', './music.service', './tuner
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, music_service_1, tuner_component_1;
+    var core_1, router_1, music_service_1, piano_component_1, reflection_component_1;
     var AppComponent;
     return {
         setters:[
@@ -21,8 +21,11 @@ System.register(['angular2/core', 'angular2/router', './music.service', './tuner
             function (music_service_1_1) {
                 music_service_1 = music_service_1_1;
             },
-            function (tuner_component_1_1) {
-                tuner_component_1 = tuner_component_1_1;
+            function (piano_component_1_1) {
+                piano_component_1 = piano_component_1_1;
+            },
+            function (reflection_component_1_1) {
+                reflection_component_1 = reflection_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -32,7 +35,7 @@ System.register(['angular2/core', 'angular2/router', './music.service', './tuner
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n      <h1>{{title}}</h1>\n      <nav>\n        <a [routerLink]=\"['Tuner']\">Tuner</a>\n      </nav>\n      <router-outlet></router-outlet>\n    ",
+                        template: "\n      <h1>{{title}}</h1>\n      <nav>\n        <a [routerLink]=\"['Piano']\">Piano</a>\n        <a [routerLink]=\"['Reflection']\">Reflection</a>\n      </nav>\n      <router-outlet></router-outlet>\n    ",
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [
                             router_1.ROUTER_PROVIDERS,
@@ -41,11 +44,16 @@ System.register(['angular2/core', 'angular2/router', './music.service', './tuner
                     }),
                     router_1.RouteConfig([
                         {
-                            path: '/tuner',
-                            name: 'Tuner',
-                            component: tuner_component_1.TunerComponent,
-                            useAsDefault: true
+                            path: '/piano',
+                            name: 'Piano',
+                            component: piano_component_1.PianoComponent,
                         },
+                        {
+                            path: '/reflection',
+                            name: 'Reflection',
+                            component: reflection_component_1.ReflectionComponent,
+                            useAsDefault: true
+                        }
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

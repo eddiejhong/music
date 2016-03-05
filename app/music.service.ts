@@ -5,7 +5,7 @@ import {Injectable} from 'angular2/core';
 const ROOT_NOTE_FREQUENCY = 440;
 const HALF_STEP_RANGE = 88;
 const RANGE_CENTER = 48;
-const NOTE_INFO = {
+const NOTES_INFO = {
     0: {
         name: 'A',
         natural: true
@@ -69,14 +69,16 @@ export class MusicService {
             notes = [];
 
         switch (instrument) {
+            case 'guitar':
+                break;
             case 'piano':
             default:
-                lowerLimit = -48;
-                upperLimit = 40;
+                lowerLimit = -24;
+                upperLimit = 28;
                 notes = [];
 
                 for (var i = lowerLimit; i < upperLimit; i++) {
-                    var note = NOTE_INFO[((i % 12)+12)%12 ];
+                    var note = NOTES_INFO[((i % 12)+12)%12 ];
                     notes.push({
                         distance: i,
                         name: note.name,

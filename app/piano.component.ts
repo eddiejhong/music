@@ -4,13 +4,11 @@ import { Router } from 'angular2/router';
 import { MusicService } from './music.service';
 
 @Component({
-    selector: 'tuner',
-    templateUrl: 'app/tuner.component.html',
+    templateUrl: 'app/piano.component.html',
     providers: [AudioContext, OscillatorNode],
-    styleUrls  : ['app/tuner.component.css'],
-    // directives: [HeroDetailComponent],
+    styleUrls  : ['app/piano.component.css'],
 })
-export class TunerComponent implements OnInit {
+export class PianoComponent implements OnInit {
     _context: AudioContext;
     _osc: OscillatorNode;
     _pianoNotesArray: [];
@@ -65,10 +63,6 @@ export class TunerComponent implements OnInit {
     }
 
     stopNote(osc) {
-        var context = this.getContext(),
-            audioDestination = context.destination;
-
-        osc.connect(audioDestination);
         osc.stop(0);
     }
 }

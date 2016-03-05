@@ -3,15 +3,16 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 
 import { MusicService }     from './music.service';
 
-// import { DashboardComponent } from './dashboard.component';
-import { TunerComponent } from './tuner.component';
+import { PianoComponent } from './piano.component';
+import { ReflectionComponent } from './reflection.component';
 
 @Component({
     selector: 'my-app',
     template: `
       <h1>{{title}}</h1>
       <nav>
-        <a [routerLink]="['Tuner']">Tuner</a>
+        <a [routerLink]="['Piano']">Piano</a>
+        <a [routerLink]="['Reflection']">Reflection</a>
       </nav>
       <router-outlet></router-outlet>
     `,
@@ -24,11 +25,16 @@ import { TunerComponent } from './tuner.component';
 
 @RouteConfig([
     {
-        path: '/tuner',
-        name: 'Tuner',
-        component: TunerComponent,
-        useAsDefault: true
+        path: '/piano',
+        name: 'Piano',
+        component: PianoComponent,
     },
+    {
+        path: '/reflection',
+        name: 'Reflection',
+        component: ReflectionComponent,
+        useAsDefault: true
+    }
 ])
 
 export class AppComponent {

@@ -1,15 +1,16 @@
 .piano {
-    background-color: pink;
-    width: 10000px;
-    height:10000px;
+    background-color: brown;
+    border: 1px solid black;
+    padding: 20px;
+    overflow: hidden;
 }
 
 .piano .key {
     z-index: 1;
     float: left;
     position: relative;
-    width: 50px;
-    height: 200px;
+    width: 30px;
+    height: 160px;
     background-color: white;
     color: black;
 
@@ -18,17 +19,21 @@
     -webkit-box-sizing: border-box;
     border: 1px solid black;
     border-left:0;
-    text-align: center;
+    font-size: 8px;
+}
+
+.piano .key:first-child {
+    border-left: 1px solid black;
 }
 
 .piano .black + .key {
-    margin-left: -13px;
+    margin-left: -9px;
 }
 
 .piano .black {
     z-index: 2;
-    margin-left: -13px;
-    width: 26px;
+    margin-left: -9px;
+    width: 18px;
     height: 100px;
     background-color: black;
     color: white;

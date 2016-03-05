@@ -67,7 +67,6 @@ System.register(['angular2/core', 'angular2/router', './music.service'], functio
                 };
                 PianoComponent = __decorate([
                     core_1.Component({
-                        selector: 'tuner',
                         templateUrl: 'app/piano.component.html',
                         providers: [AudioContext, OscillatorNode],
                         styleUrls: ['app/piano.component.css'],
@@ -80,4 +79,4 @@ System.register(['angular2/core', 'angular2/router', './music.service'], functio
         }
     }
 });
-//# sourceMappingURL=tuner.component.js.map
+//# sourceMappingURL=piano.component.js.map

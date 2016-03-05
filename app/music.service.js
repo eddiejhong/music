@@ -1,12 +1,12 @@
 System.register([], function(exports_1) {
-    var ROOT_NOTE_FREQUENCY, HALF_STEP_RANGE, RANGE_CENTER, NOTE_INFO, MusicService;
+    var ROOT_NOTE_FREQUENCY, HALF_STEP_RANGE, RANGE_CENTER, NOTES_INFO, MusicService;
     return {
         setters:[],
         execute: function() {
             ROOT_NOTE_FREQUENCY = 440;
             HALF_STEP_RANGE = 88;
             RANGE_CENTER = 48;
-            NOTE_INFO = {
+            NOTES_INFO = {
                 0: {
                     name: 'A',
                     natural: true
@@ -69,13 +69,15 @@ System.register([], function(exports_1) {
                     if (instrument === void 0) { instrument = 'piano'; }
                     var lowerLimit = 0, upperLimit = 0, notes = [];
                     switch (instrument) {
+                        case 'guitar':
+                            break;
                         case 'piano':
                         default:
-                            lowerLimit = -48;
-                            upperLimit = 40;
+                            lowerLimit = -24;
+                            upperLimit = 28;
                             notes = [];
                             for (var i = lowerLimit; i < upperLimit; i++) {
-                                var note = NOTE_INFO[((i % 12) + 12) % 12];
+                                var note = NOTES_INFO[((i % 12) + 12) % 12];
                                 notes.push({
                                     distance: i,
                                     name: note.name,
